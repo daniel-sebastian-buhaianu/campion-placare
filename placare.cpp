@@ -28,13 +28,15 @@ int main()
                 int cod; citeste >> cod;
                 if (cod < 0)
                 {
-                    for (int linie = i; linie < n; linie++)
+                    cod *= -1;
+                    for (int linie = i;
+                         linie < (i + cod); linie++)
                     {
-                        a[linie][j] = cod*(-1);
+                        a[linie][j] = cod;
                     }
                     j++;
                 }
-                else
+                else if (cod > 0)
                 {
                     for (int coloana = j;
                          coloana < (j + cod); coloana++)
@@ -42,6 +44,10 @@ int main()
                         a[i][coloana] = cod;
                     }
                     j += cod;
+                }
+                else
+                {
+                    j = m;
                 }
             }
         }
