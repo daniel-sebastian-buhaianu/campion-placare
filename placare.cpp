@@ -48,6 +48,7 @@ int main()
                 else
                 {
                     j = m;
+                    i--;
                 }
             }
         }
